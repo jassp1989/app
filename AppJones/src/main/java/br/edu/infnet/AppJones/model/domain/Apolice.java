@@ -2,19 +2,26 @@ package br.edu.infnet.AppJones.model.domain;
 
 import java.time.LocalDate;
 
-public class Apolice {
+public abstract class Apolice {
 	
-	private Long apoliceContratante;
+	private Integer id;
+	private String apoliceContratante;
 	private String SeguradoraContratada;
 	private LocalDate vigenciaInicial;
 	private LocalDate vigenciaFinal;
 	private float valor;
+	private String tipoSeguro;
 	
-	
-	public Long getApoliceContratante() {
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	public String getApoliceContratante() {
 		return apoliceContratante;
 	}
-	public void setApoliceContratante(Long apoliceContratante) {
+	public void setApoliceContratante(String apoliceContratante) {
 		this.apoliceContratante = apoliceContratante;
 	}
 	public String getSeguradoraContratada() {
@@ -40,6 +47,17 @@ public class Apolice {
 	}
 	public void setValor(float valor) {
 		this.valor = valor;
+	}
+	public String getTipoSeguro() {
+		return tipoSeguro;
+	}
+	public void setTipoSeguro(String tipoSeguro) {
+		this.tipoSeguro = tipoSeguro;
+	}
+	@Override
+	public String toString() {
+		return "Apolice [apoliceContratante=" + apoliceContratante + ", SeguradoraContratada=" + SeguradoraContratada
+				+ ", valor=" + valor + "]";
 	}
 	
 	
